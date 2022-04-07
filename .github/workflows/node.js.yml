@@ -31,4 +31,5 @@ jobs:
       env:
         APP_TOKEN: ${{ secrets.CAPROVER_APP_TOKEN }}
         APP_URL: ${{ secrets.CAPROVER_APP_URL }}
-      run: 'caprover deploy -t ./deploy.tar --caproverUrl=$APP_URL'
+        APP_NAME: ${{ secrets.CAPROVER_APP_NAME }}
+      run: 'caprover deploy -h $APP_URL --appToken $APP_TOKEN -b main -a $APP_NAME
