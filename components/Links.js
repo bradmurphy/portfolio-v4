@@ -13,13 +13,13 @@ const BaseLink = (props) => {
   let linkContent = null;
 
   switch (mode) {
-    case 'blinkk':
+    case 'company':
       linkContent = (
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className={[link, link__company]}
+          className={`${link} ${link__company}`}
         >
           {children}
         </a>
@@ -79,7 +79,7 @@ const BaseLink = (props) => {
   return linkContent;
 };
 
-export const BlinkkLink = (props) => <BaseLink {...props} mode="blinkk" />;
+export const BlinkkLink = (props) => <BaseLink {...props} mode="company" />;
 export const ProjectLink = (props) => <BaseLink {...props} />;
 export const ViewResumeLink = (props) => (
   <BaseLink {...props} mode="view-resume" />
