@@ -7,8 +7,7 @@ import {
 } from '../styles/modules/about.module.sass';
 import {
   title__headline,
-  typography__copy,
-  typography__copy__light
+  typography__copy
 } from '../styles/modules/typography.module.sass';
 
 // components
