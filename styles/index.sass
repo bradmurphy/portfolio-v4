@@ -1,0 +1,36 @@
+@import 'reset'
+@import 'variables'
+
+body, html
+	background-color: rgba($background, .8)
+	color: $black
+	font-family: $font
+	font-size: 16px
+	line-height: 24px
+	width: 100%
+	-moz-osx-font-smoothing: grayscale
+	-webkit-font-smoothing: antialiased
+
+	#root
+		width: 100%
+
+.app
+	width: 100%
+
+#wrap
+	background-color: $white
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+	box-sizing: border-box
+	margin: 0 auto
+	width: 100%
+	@media (min-width: 680px)
+		max-width: 600px
+
+#resume-wrap
+	background-color: $offwhite
+	color: $black
+	height: auto
+	margin: 0 auto
+	width: 100%
+	@media (min-width: 680px) 
+		min-height: 100%

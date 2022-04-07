@@ -1,0 +1,40 @@
+@import '../variables'
+
+.about 
+	background-color: $navy
+	border-bottom-left-radius: 25px
+	border-bottom-right-radius: 25px
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+	padding: 0 20px 20px 20px
+	position: relative
+	z-index: 2
+	@media (min-width: 680px)
+		box-shadow: none
+
+.header
+	align-items: center
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	padding: 20px 0
+	@media (min-width: 480px)
+		justify-content: flex-start
+	@media (min-width: 680px)
+		justify-content: space-between
+	img
+		height: 65px
+		@media (min-width: 680px)
+			height: 120px
+
+.media__avatar
+	border-radius: 6px
+	margin-bottom: 25px
+	width: 100%
+
+.company
+	display: block
+	margin: 50px auto
+	width: 100px
+	img 
+		border-radius: 6px
+		width: 100%

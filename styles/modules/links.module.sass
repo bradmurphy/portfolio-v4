@@ -1,0 +1,79 @@
+@import '../variables'
+
+.link
+	color: $orange
+	cursor: pointer
+	display: inline-block
+	font-weight: 700
+	position: relative
+	text-decoration: none
+	transition: all .3s ease-in
+
+	&[hidden]
+		display: none
+
+	&:after
+		background-color: $orange
+		content: ''
+		display: inline-block
+		height: 2px
+		left: 0
+		position: absolute
+		top: 23px
+		transition: width 0.3s ease 0s, left 0.3s ease 0s
+		width: 0
+	
+	@media (min-width: 680px)
+		&:hover:after
+			width: 100%
+
+	&__error
+		color: $white
+		font-weight: 700
+		&:after
+			background-color: $white
+
+	&__resume__sidebar__link
+		color: $black
+		font-weight: 700
+		&:after
+			background-color: $black
+
+	&__resume__page
+		height: auto
+		margin: 25px 0 10px 0
+		width: 35px
+		&:after
+			display: none
+		img
+			height: auto !important
+			width: 100% !important
+		@media (min-width: 680px)
+			width: 40px
+		@media (min-width: 1024px)
+			align-self: flex-start
+
+	&__resume
+		color: $black
+		@media (min-width: 680px)
+			&:hover
+				width: 100%
+	
+	&__company
+		color: $brown
+		@media (min-width: 680px)
+			&:after
+				background-color: $brown
+
+	&__resume__link
+		text-transform: uppercase
+
+	&__submit
+		padding-bottom: 50px
+		&[disabled]
+			opacity: .5
+			pointer-events: none
+
+		@media (min-width: 680px)
+			&:hover:after
+				width: 57px !important

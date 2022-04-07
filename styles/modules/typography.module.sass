@@ -1,0 +1,79 @@
+@import '../variables'
+
+.typography__copy 
+	font-size: 1rem
+	line-height: 1.5rem
+	margin-bottom: 20px
+	&[variant="light"]
+		color: $white
+	&__resume
+		font-size: 1rem
+		margin: 0
+		a
+			color: $black
+			font-weight: 700
+		strong
+			font-weight: 700
+		em
+			font-style: italic
+	&__project
+		margin: 5px 0
+		em
+			font-style: italic
+		strong
+			font-weight: 700
+			letter-spacing: .5px
+	&__tech
+		color: $grey
+		font-style: italic
+		margin-top: 20px
+
+.resume__headline 
+	border-bottom: 1px dashed $black
+	color: $orange
+	font-size: 1.5rem
+	font-weight: 700
+	margin-bottom: 20px
+	padding-bottom: 15px
+	text-transform: uppercase
+	&:nth-child(1n+2)
+		margin-top: 25px
+
+.title__headline
+	color: $white
+	font-size: 1rem
+	letter-spacing: 1.25px
+	line-height: 1.5rem
+	margin-left: 15px
+	max-width: 250px
+	text-transform: uppercase
+	strong 
+		color: $orange
+		font-weight: 500
+		white-space: nowrap
+	@media (min-width: 360px)
+		font-size: 1.25rem
+		line-height: 1.75rem
+	@media (min-width: 400px)
+		font-size: 1.5rem
+		line-height: 2rem
+		max-width: 100%
+	@media (min-width: 680px)
+		font-size: 2.25rem
+		line-height: 2.75rem
+
+.work__headline
+	color: $black
+	font-size: 1.5rem
+	line-height: 2rem
+	margin-bottom: 20px
+	strong
+		color: $orange
+		font-weight: 700
+		letter-spacing: .65px
+		text-transform: uppercase
+	&__light
+		color: $white
+	@media (min-width: 680px)
+		font-size: 2rem
+		line-height: 2.5rem
