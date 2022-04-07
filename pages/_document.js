@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class BMDevDocument extends Document {
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
           <link rel="shortcut icon" href="favicon.ico" />
