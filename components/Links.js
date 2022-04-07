@@ -4,21 +4,11 @@ import {
   link__resume__link,
   link__resume__page,
   link__resume__sidebar__link,
-  link__company,
-  link__submit,
-  link__error
+  link__company
 } from '../styles/modules/links.module.sass';
 
 const BaseLink = (props) => {
-  const { href, children, disabled, hidden, mode, onClick, target } = props;
-
-  const disabledStyle = disabled
-    ? {
-        cursor: 'none',
-        pointerEvents: 'none',
-        opacity: '0.75'
-      }
-    : {};
+  const { href, children, mode, target } = props;
 
   let linkContent = null;
 
@@ -75,9 +65,14 @@ const BaseLink = (props) => {
       break;
     default:
       linkContent = (
-        <Link href={href} rel="noopener noreferrer">
-          <a className={link}>{children}</a>
-        </Link>
+        <a
+          href={href}
+          target={target}
+          className={link}
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
       );
   }
 
