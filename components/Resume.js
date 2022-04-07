@@ -48,8 +48,8 @@ const Resume = () => (
         </span>
         <span className={copyStyles}>(404) 432 - 3796</span>
         <ResumeLink href="/">bradmurphy.dev</ResumeLink>
-        <ResumeLink href="mailto:bm.dev84@gmail.com?&amp;subject=BRADMURPHYDEV.COM%20|%20Website%20Inquiry">
-          bm.dev84@gmail.com
+        <ResumeLink href="mailto:brad@bradmurphy.dev?&amp;subject=BRADMURPHY.DEV%20|%20Website%20Inquiry">
+          brad@bradmurphy.dev
         </ResumeLink>
         <span className={copyStyles}>Canton, GA 30114</span>
         <ResumeDownloadLink href="/resume.pdf">
