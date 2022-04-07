@@ -11,7 +11,7 @@ on:
 
 env:
   APP_TOKEN: ${{ secrets.CAPROVER_STAGING_APP_TOKEN }}
-  APP_URL: ${{ secrets.CAPROVER_STAGING_APP_URL }}
+  APP_URL: ${{ secrets.CAPROVER_APP_URL }}
   APP_NAME: ${{ secrets.CAPROVER_STAGING_APP_NAME }}
 
 jobs:
