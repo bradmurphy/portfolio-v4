@@ -33,4 +33,4 @@ jobs:
     - name: 'Install caprover-cli'
       run: npm install -g caprover
     - name: 'Deploy App to Caprover'
-      run: 'caprover deploy -h $APP_URL --appToken $APP_TOKEN -b main -a $APP_NAME'
+      run: 'caprover deploy -h $APP_URL --appToken $APP_TOKEN -b staging -a $APP_NAME'
