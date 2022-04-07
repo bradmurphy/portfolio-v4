@@ -87,7 +87,18 @@ class BMDevDocument extends Document {
             name="keywords"
             content="Brad Murphy, Brad Murphy Front End Development, Brad Murphy Web Development, Brad Murphy Web, Brad Murphy Engineer, Brad Murphy Web Design, Brad Murphy Software Engineer, Brad Murphy Software Development, Brad Murphy Development, Development, Software Development, Software Engineering, Web Design, Development, Web Design, Engineer, Web, Web Development, Front End Development, Black Airplane, Hook, Hook Studios, Blinkk, Creative Circus"
           />
-          <meta name="theme-color" content="#070b1b" />
+
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#F27124"
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#0F1217"
+          />
+
           <meta property="og:type" content="website" />
           <meta
             property="og:image"
