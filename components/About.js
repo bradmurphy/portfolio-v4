@@ -33,13 +33,14 @@ const About = (props) => {
           <br /> <strong>{title}</strong>
         </h1>
       </div>
-      <Image
-        src={avatar.src}
-        alt={name}
-        height={avatar.height}
-        width={avatar.width}
-        className={media__avatar}
-      />
+      <div className={media__avatar}>
+        <Image
+          src={avatar.src}
+          alt={name}
+          height={avatar.height}
+          width={avatar.width}
+        />
+      </div>
       <p className={typography__copy} {...lightVariant}>
         I always find writing about myself to be a rather difficult task.
         However -- this is my portfolio, so I suppose I should say a few things.
