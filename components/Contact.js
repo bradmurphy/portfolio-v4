@@ -1,116 +1,23 @@
-import { useState } from "react";
-import Image from "next/image";
+import Image from 'next/image';
 import {
   contact,
   contact__signature,
   contact__signature__image,
   contact__signature__social__block,
   contact__signature__reach__out,
-  contact__social__link,
-  contact__form__thankyou,
-  contact__form__error,
-  contact__form__wrapper,
-  contact__form__input,
-  contact__form__input__error,
-  contact__form__input__text__area
-} from "../styles/modules/contact.module.sass";
+  contact__social__link
+} from '../styles/modules/contact.module.sass';
 
 import {
   work__headline,
   work__headline__light
-} from "../styles/modules/work.module.sass";
+} from '../styles/modules/typography.module.sass';
 
 // components
-import { FormErrorEmailLink, ViewResumeLink, SubmitLink } from "./Links";
-
-// api path
-const API_PATH = `/api/contact/index.php`;
+import { ViewResumeLink } from './Links';
 
 const Contact = (props) => {
-  const [state, setState] = useState({
-    name: "",
-    email: "",
-    message: "",
-    sent: false,
-    error: false,
-    inputErrors: {
-      name: false,
-      email: false,
-      message: false
-    }
-  });
-
-  const { reachOut, emailDetails, social, resume, thankYou } = props;
-  const { name, email, message, sent, error, inputErrors } = state;
-
-  const validate = (input, type) => {
-    let validation = null;
-
-    switch (type) {
-      case "name":
-        validation = input.match(/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/g)
-          ? false
-          : true;
-        break;
-      case "email":
-        validation = input.match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        )
-          ? false
-          : true;
-        break;
-      default:
-        validation = input.length > 0 ? false : true;
-        break;
-    }
-
-    return validation;
-  };
-
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-
-    const nameErr = validate(name, "name");
-    const emailErr = validate(email, "email");
-    const messageErr = validate(message, "message");
-
-    const canSubmit = !nameErr && !emailErr && !messageErr;
-
-    try {
-      if (canSubmit) {
-        const resp = await fetch(API_PATH, {
-          method: "post",
-          headers: {
-            accept: "application/json",
-            "content-type": "application/json"
-          },
-          body: JSON.stringify(...state)
-        });
-        setState({ ...state, sent: resp.sent });
-        console.log(state);
-      } else {
-        console.log("error");
-        setState({
-          ...state,
-          inputErrors: {
-            name: nameErr,
-            email: emailErr,
-            message: messageErr
-          }
-        });
-      }
-    } catch (e) {
-      setState({ ...state, error: true });
-    }
-  };
-
-  const errStyle = `${contact__form__input} ${contact__form__input__error}`;
-
-  const nameErrorStyle = inputErrors.name ? errStyle : contact__form__input;
-  const emailErrorStyle = inputErrors.email ? errStyle : contact__form__input;
-  const messageErrorStyle = inputErrors.message
-    ? errStyle
-    : contact__form__input;
+  const { reachOut, emailDetails, social, resume } = props;
 
   return (
     <section className={contact}>
@@ -270,71 +177,6 @@ const Contact = (props) => {
         </div>
         <ViewResumeLink href={resume.link}>{resume.text}</ViewResumeLink>
       </div>
-      <span className={contact__form__thankyou} hidden={!sent}>
-        {thankYou}
-      </span>
-      <form action="#" className={contact__form__wrapper} hidden={sent}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          className={nameErrorStyle}
-          value={name}
-          onChange={(e) => {
-            setState({
-              ...state,
-              name: e.target.value,
-              inputErrors: {
-                ...inputErrors,
-                name: validate(e.target.value, "name")
-              }
-            });
-          }}
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="E-mail"
-          className={emailErrorStyle}
-          value={email}
-          onChange={(e) => {
-            setState({
-              ...state,
-              email: e.target.value,
-              inputErrors: {
-                ...inputErrors,
-                email: validate(e.target.value, "email")
-              }
-            });
-          }}
-        />
-        <textarea
-          name="message"
-          placeholder="Have an idea?  Let's talk."
-          className={`${messageErrorStyle} ${contact__form__input__text__area}`}
-          onChange={(e) => {
-            setState({
-              ...state,
-              message: e.target.value,
-              inputErrors: {
-                ...inputErrors,
-                message: validate(e.target.value, "message")
-              }
-            });
-          }}
-          value={message}
-        ></textarea>
-        <SubmitLink onClick={handleFormSubmit} disabled={sent} hidden={error}>
-          Submit
-        </SubmitLink>
-        <span className={contact__form__error} hidden={!error}>
-          Oops! Something went wrong. Please email me @{" "}
-          <FormErrorEmailLink href={emailDetails.link}>
-            {emailDetails.address}
-          </FormErrorEmailLink>
-          .
-        </span>
-      </form>
     </section>
   );
 };

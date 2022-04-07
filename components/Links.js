@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 import {
   link,
   link__resume__link,
@@ -7,23 +7,23 @@ import {
   link__company,
   link__submit,
   link__error
-} from "../styles/modules/links.module.sass";
+} from '../styles/modules/links.module.sass';
 
 const BaseLink = (props) => {
   const { href, children, disabled, hidden, mode, onClick, target } = props;
 
   const disabledStyle = disabled
     ? {
-        cursor: "none",
-        pointerEvents: "none",
-        opacity: "0.75"
+        cursor: 'none',
+        pointerEvents: 'none',
+        opacity: '0.75'
       }
     : {};
 
   let linkContent = null;
 
   switch (mode) {
-    case "blinkk":
+    case 'blinkk':
       linkContent = (
         <a
           href={href}
@@ -35,26 +35,14 @@ const BaseLink = (props) => {
         </a>
       );
       break;
-    case "submit":
-      linkContent = (
-        <span
-          onClick={onClick}
-          className={`${link} ${link__submit}`}
-          style={disabledStyle}
-          hidden={hidden}
-        >
-          {children}
-        </span>
-      );
-      break;
-    case "view-resume":
+    case 'view-resume':
       linkContent = (
         <Link href={href}>
           <a className={`${link} ${link__resume__link}`}>{children}</a>
         </Link>
       );
       break;
-    case "resume-download":
+    case 'resume-download':
       linkContent = (
         <a
           href={href}
@@ -66,14 +54,14 @@ const BaseLink = (props) => {
         </a>
       );
       break;
-    case "resume":
+    case 'resume':
       linkContent = (
         <Link href={href}>
           <a className={`${link} ${link__resume__sidebar__link}`}>{children}</a>
         </Link>
       );
       break;
-    case "resume-external":
+    case 'resume-external':
       linkContent = (
         <a
           href={href}
@@ -84,17 +72,7 @@ const BaseLink = (props) => {
           {children}
         </a>
       );
-    case "error-form-email":
-      linkContent = (
-        <a
-          href={href}
-          className={`${link} ${link__error}`}
-          target="__blank"
-          rel="noopener noreferrer"
-        >
-          {children}
-        </a>
-      );
+      break;
     default:
       linkContent = (
         <Link href={href} rel="noopener noreferrer">
@@ -118,7 +96,3 @@ export const ResumeExternalLink = (props) => (
   <BaseLink {...props} mode="resume-external" />
 );
 export const ResumeLink = (props) => <BaseLink {...props} mode="resume" />;
-export const SubmitLink = (props) => <BaseLink {...props} mode="submit" />;
-export const FormErrorEmailLink = (props) => (
-  <BaseLink {...props} mode="error-form-email" />
-);

@@ -34,7 +34,11 @@
 .company
 	display: block
 	margin: 50px auto
+	transition: all .2s ease-in
 	width: 100px
+	@media (min-width: 680px)
+		&:hover
+			transform: translate3d(0, -5px, 0)
 	img 
 		border-radius: 6px
 		width: 100%
