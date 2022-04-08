@@ -1,5 +1,9 @@
 import Image from 'next/image';
-import { project, project__logo } from '../styles/modules/project.module.sass';
+import {
+  project,
+  project__inner,
+  project__logo
+} from '../styles/modules/project.module.sass';
 import {
   typography__copy,
   typography__copy__project,
@@ -38,22 +42,24 @@ const Project = (props) => {
           width={logo.width}
         />
       </a>
-      <p className={textStyles}>
-        <strong>Project:</strong>{' '}
-        <ProjectLink href={url} target="_blank">
-          {headline}
-        </ProjectLink>
-      </p>
-      <p className={textStyles}>
-        <strong>Type:</strong> {type}
-      </p>
-      <p className={textStyles}>
-        <strong>Date:</strong> {date}
-      </p>
-      <p className={textStyles}>
-        <strong>Notes:</strong> {children}
-      </p>
-      <p className={techStyles}>{tech.join(', ')}</p>
+      <div className={project__inner}>
+        <p className={textStyles}>
+          <strong>Project:</strong>{' '}
+          <ProjectLink href={url} target="_blank">
+            {headline}
+          </ProjectLink>
+        </p>
+        <p className={textStyles}>
+          <strong>Type:</strong> {type}
+        </p>
+        <p className={textStyles}>
+          <strong>Date:</strong> {date}
+        </p>
+        <p className={textStyles}>
+          <strong>Notes:</strong> {children}
+        </p>
+        <p className={techStyles}>{tech.join(', ')}</p>
+      </div>
     </article>
   );
 };

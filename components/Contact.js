@@ -20,7 +20,7 @@ const Contact = (props) => {
   const { reachOut, emailDetails, social, resume } = props;
 
   return (
-    <section className={contact}>
+    <footer className={contact}>
       <h2 className={`${work__headline} ${work__headline__light}`}>
         {`//`} <strong>Contact</strong>
       </h2>
@@ -177,7 +177,7 @@ const Contact = (props) => {
         </div>
         <ViewResumeLink href={resume.link}>{resume.text}</ViewResumeLink>
       </div>
-    </section>
+    </footer>
   );
 };
 

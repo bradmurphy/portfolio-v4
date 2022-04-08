@@ -7,14 +7,13 @@
 	margin-bottom: 35px
 	@media (min-width: 1024px)
 		border-top: none
-		max-width: 50%
+		max-width: calc(50% - 20px)
 		&:nth-of-type(odd)
-			padding-right: 20px
+			margin-right: 10px
 		&:nth-of-type(even)
-			padding-left: 20px
+			margin-left: 10px
 		&:last-child
-			padding: 0
-			
+			margin: 0
 
 	&__logo
 		display: block
@@ -24,5 +23,22 @@
 		@media (min-width: 600px)
 			&:hover
 				transform: translate3d(0, -5px, 0)
+		@media (min-width: 1024px)
+			align-items: center
+			display: flex
+			flex-direction: column
+			justify-content: center
+			margin: 0 auto
+			height: 125px
 		img
 			width: 100%
+			
+	&__inner
+		background: transparent
+		display: flex
+		flex-direction: column
+		@media (min-width: 1024px)
+			background: $background
+			border-radius: 6px
+			flex: 1
+			padding: 20px

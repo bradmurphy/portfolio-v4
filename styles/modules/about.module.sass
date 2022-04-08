@@ -17,6 +17,7 @@
 	flex-direction: column
 	justify-content: flex-start
 	@media (min-width: 1024px)
+		align-items: stretch
 		flex-direction: row
 
 .logo__container
@@ -30,10 +31,11 @@
 	flex-direction: column
 	justify-content: flex-start
 	@media (min-width: 1024px)
-		flex: 1
-		padding-left: 40px
+		flex: 0 1 auto
+		justify-content: center
+		padding: 40px 0 0 40px
 
-.header
+.header__mobile
 	align-items: center
 	display: flex
 	flex-direction: row
@@ -44,21 +46,41 @@
 	@media (min-width: 600px)
 		justify-content: space-between
 	@media (min-width: 1024px)
-		justify-content: flex-start
+		display: none
 	img
 		height: 65px
 		@media (min-width: 600px)
 			height: 120px
 
+.media__lockup
+	align-items: center
+	display: flex
+	flex-direction: column
+	justify-content: center
+	margin-bottom: 25px
+	width: 100%
+	@media (min-width: 1024px)
+		margin-bottom: initial
+		min-width: 560px
+
+.header__desktop
+	align-items: center
+	display: none
+	flex-direction: row
+	justify-content: space-between
+	padding: 20px 0
+	width: 100%
+	@media (min-width: 1024px)
+		display: flex
+	img
+		height: 120px
+
 .media__avatar
 	border-radius: 6px
-	margin-bottom: 25px
 	overflow: hidden
 	width: 100%
 	@media (min-width: 600px)
 		max-width: 560px
-	@media (min-width: 1024px)
-		width: 50%
 
 .company
 	display: block

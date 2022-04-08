@@ -3,9 +3,11 @@ import {
   about,
   about__row,
   content,
-  header,
+  header__mobile,
+  header__desktop,
   logo__container,
   media__avatar,
+  media__lockup,
   company
 } from '../styles/modules/about.module.sass';
 import {
@@ -22,8 +24,8 @@ const About = (props) => {
   const lightVariant = { variant: 'light' };
 
   return (
-    <section className={about}>
-      <div className={header}>
+    <header className={about}>
+      <div className={header__mobile}>
         <div className={logo__container}>
           <Image
             src={logo.src}
@@ -38,13 +40,29 @@ const About = (props) => {
         </h1>
       </div>
       <div className={about__row}>
-        <div className={media__avatar}>
-          <Image
-            src={avatar.src}
-            alt={name}
-            height={avatar.height}
-            width={avatar.width}
-          />
+        <div className={media__lockup}>
+          <div className={header__desktop}>
+            <div className={logo__container}>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                height={logo.height}
+                width={logo.width}
+              />
+            </div>
+            <h1 className={title__headline}>
+              {name}
+              <br /> <strong>{title}</strong>
+            </h1>
+          </div>
+          <div className={media__avatar}>
+            <Image
+              src={avatar.src}
+              alt={name}
+              height={avatar.height}
+              width={avatar.width}
+            />
+          </div>
         </div>
         <div className={content}>
           <p className={typography__copy} {...lightVariant}>
@@ -88,7 +106,7 @@ const About = (props) => {
           </p>
         </div>
       </div>
-    </section>
+    </header>
   );
 };
 
