@@ -5,13 +5,23 @@
 	display: flex
 	flex-direction: column
 	margin-bottom: 35px
+	@media (min-width: 1024px)
+		border-top: none
+		max-width: 50%
+		&:nth-of-type(odd)
+			padding-right: 20px
+		&:nth-of-type(even)
+			padding-left: 20px
+		&:last-child
+			padding: 0
+			
 
 	&__logo
 		display: block
 		margin: 50px auto 35px auto
 		outline: 0
 		transition: all .2s ease-in
-		@media (min-width: 680px)
+		@media (min-width: 600px)
 			&:hover
 				transform: translate3d(0, -5px, 0)
 		img
