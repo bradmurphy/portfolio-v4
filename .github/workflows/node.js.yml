@@ -26,7 +26,6 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v3
      
-    - run: npm config set strict-ssl false
     
     # Install Caprover CLI, which we use to deploy images to Caprover
     - name: 'Install caprover-cli'
