@@ -8,8 +8,30 @@
 	padding: 0 20px 20px 20px
 	position: relative
 	z-index: 2
-	@media (min-width: 680px)
+	@media (min-width: 600px)
 		box-shadow: none
+
+.about__row
+	align-items: flex-start
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	@media (min-width: 1024px)
+		flex-direction: row
+
+.logo__container
+	width: 65px
+	@media (min-width: 600px)
+		width: 120px
+
+.content
+	align-items: flex-start
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	@media (min-width: 1024px)
+		flex: 1
+		padding-left: 40px
 
 .header
 	align-items: center
@@ -19,11 +41,13 @@
 	padding: 20px 0
 	@media (min-width: 480px)
 		justify-content: flex-start
-	@media (min-width: 680px)
+	@media (min-width: 600px)
 		justify-content: space-between
+	@media (min-width: 1024px)
+		justify-content: flex-start
 	img
 		height: 65px
-		@media (min-width: 680px)
+		@media (min-width: 600px)
 			height: 120px
 
 .media__avatar
@@ -31,15 +55,22 @@
 	margin-bottom: 25px
 	overflow: hidden
 	width: 100%
+	@media (min-width: 600px)
+		max-width: 560px
+	@media (min-width: 1024px)
+		width: 50%
 
 .company
 	display: block
-	margin: 50px auto
+	margin: 30px auto 50px
 	transition: all .2s ease-in
 	width: 100px
-	@media (min-width: 680px)
+	@media (min-width: 600px)
 		&:hover
 			transform: translate3d(0, -5px, 0)
+	@media (min-width: 1024px)
+		margin: 0 auto 20px
+		width: 75px
 	img 
 		border-radius: 6px
 		width: 100%

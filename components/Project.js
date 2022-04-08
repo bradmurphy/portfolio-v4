@@ -23,7 +23,7 @@ const Project = (props) => {
   const techStyles = `${textStyles} ${typography__copy__tech}`;
 
   return (
-    <section className={project}>
+    <article className={project}>
       <a
         href={url}
         target="_blank"
@@ -54,7 +54,7 @@ const Project = (props) => {
         <strong>Notes:</strong> {children}
       </p>
       <p className={techStyles}>{tech.join(', ')}</p>
-    </section>
+    </article>
   );
 };
 
