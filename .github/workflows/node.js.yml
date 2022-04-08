@@ -15,7 +15,7 @@ env:
   APP_NAME: ${{ secrets.CAPROVER_APP_NAME }}
 
 jobs:
-  build:
+  Deploy:
 
     runs-on: ubuntu-latest
 
@@ -26,7 +26,6 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v3
      
-    - run: npm ci
     - run: npm config set strict-ssl false
     
     # Install Caprover CLI, which we use to deploy images to Caprover
