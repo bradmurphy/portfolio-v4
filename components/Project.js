@@ -43,21 +43,23 @@ const Project = (props) => {
         />
       </a>
       <div className={project__inner}>
-        <p className={textStyles}>
-          <strong>Project:</strong>{' '}
-          <ProjectLink href={url} target="_blank">
-            {headline}
-          </ProjectLink>
-        </p>
-        <p className={textStyles}>
-          <strong>Type:</strong> {type}
-        </p>
-        <p className={textStyles}>
-          <strong>Date:</strong> {date}
-        </p>
-        <p className={textStyles}>
-          <strong>Notes:</strong> {children}
-        </p>
+        <div>
+          <p className={textStyles}>
+            <strong>Project:</strong>{' '}
+            <ProjectLink href={url} target="_blank">
+              {headline}
+            </ProjectLink>
+          </p>
+          <p className={textStyles}>
+            <strong>Type:</strong> {type}
+          </p>
+          <p className={textStyles}>
+            <strong>Date:</strong> {date}
+          </p>
+          <p className={textStyles}>
+            <strong>Notes:</strong> {children}
+          </p>
+        </div>
         <p className={techStyles}>{tech.join(', ')}</p>
       </div>
     </article>
