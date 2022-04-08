@@ -17,13 +17,16 @@
 	flex-direction: column
 	justify-content: flex-start
 	@media (min-width: 1024px)
-		align-items: stretch
 		flex-direction: row
+	@media (min-width: 1280px)
+		align-items: stretch
 
 .logo__container
 	width: 65px
 	@media (min-width: 600px)
 		width: 120px
+	@media (min-width: 1024px)
+		width: 88px
 
 .content
 	align-items: flex-start
@@ -61,6 +64,9 @@
 	width: 100%
 	@media (min-width: 1024px)
 		margin-bottom: initial
+		max-width: 560px
+		min-width: 465px
+	@media (min-width: 1280px)
 		min-width: 560px
 
 .header__desktop
