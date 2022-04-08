@@ -1,5 +1,9 @@
 import Image from 'next/image';
-import { project, project__logo } from '../styles/modules/project.module.sass';
+import {
+  project,
+  project__inner,
+  project__logo
+} from '../styles/modules/project.module.sass';
 import {
   typography__copy,
   typography__copy__project,
@@ -23,7 +27,7 @@ const Project = (props) => {
   const techStyles = `${textStyles} ${typography__copy__tech}`;
 
   return (
-    <section className={project}>
+    <article className={project}>
       <a
         href={url}
         target="_blank"
@@ -38,23 +42,27 @@ const Project = (props) => {
           width={logo.width}
         />
       </a>
-      <p className={textStyles}>
-        <strong>Project:</strong>{' '}
-        <ProjectLink href={url} target="_blank">
-          {headline}
-        </ProjectLink>
-      </p>
-      <p className={textStyles}>
-        <strong>Type:</strong> {type}
-      </p>
-      <p className={textStyles}>
-        <strong>Date:</strong> {date}
-      </p>
-      <p className={textStyles}>
-        <strong>Notes:</strong> {children}
-      </p>
-      <p className={techStyles}>{tech.join(', ')}</p>
-    </section>
+      <div className={project__inner}>
+        <div>
+          <p className={textStyles}>
+            <strong>Project:</strong>{' '}
+            <ProjectLink href={url} target="_blank">
+              {headline}
+            </ProjectLink>
+          </p>
+          <p className={textStyles}>
+            <strong>Type:</strong> {type}
+          </p>
+          <p className={textStyles}>
+            <strong>Date:</strong> {date}
+          </p>
+          <p className={textStyles}>
+            <strong>Notes:</strong> {children}
+          </p>
+        </div>
+        <p className={techStyles}>{tech.join(', ')}</p>
+      </div>
+    </article>
   );
 };
 

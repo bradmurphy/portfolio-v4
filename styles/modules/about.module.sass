@@ -8,10 +8,38 @@
 	padding: 0 20px 20px 20px
 	position: relative
 	z-index: 2
-	@media (min-width: 680px)
+	@media (min-width: 600px)
 		box-shadow: none
 
-.header
+.about__row
+	align-items: flex-start
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	@media (min-width: 1024px)
+		align-items: center
+		flex-direction: row
+	@media (min-width: 1280px)
+		align-items: stretch
+
+.logo__container
+	width: 65px
+	@media (min-width: 600px)
+		width: 120px
+	@media (min-width: 1024px)
+		width: 88px
+
+.content
+	align-items: flex-start
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	@media (min-width: 1024px)
+		flex: 0 1 auto
+		justify-content: center
+		padding: 40px 0 0 40px
+
+.header__mobile
 	align-items: center
 	display: flex
 	flex-direction: row
@@ -19,27 +47,59 @@
 	padding: 20px 0
 	@media (min-width: 480px)
 		justify-content: flex-start
-	@media (min-width: 680px)
+	@media (min-width: 600px)
 		justify-content: space-between
+	@media (min-width: 1024px)
+		display: none
 	img
 		height: 65px
-		@media (min-width: 680px)
+		@media (min-width: 600px)
 			height: 120px
+
+.media__lockup
+	align-items: center
+	display: flex
+	flex-direction: column
+	justify-content: center
+	margin-bottom: 25px
+	width: 100%
+	@media (min-width: 1024px)
+		margin-bottom: initial
+		max-width: 560px
+		min-width: 465px
+	@media (min-width: 1280px)
+		min-width: 560px
+
+.header__desktop
+	align-items: center
+	display: none
+	flex-direction: row
+	justify-content: space-between
+	padding: 20px 0
+	width: 100%
+	@media (min-width: 1024px)
+		display: flex
+	img
+		height: 120px
 
 .media__avatar
 	border-radius: 6px
-	margin-bottom: 25px
 	overflow: hidden
 	width: 100%
+	@media (min-width: 600px)
+		max-width: 560px
 
 .company
 	display: block
-	margin: 50px auto
+	margin: 30px auto 50px
 	transition: all .2s ease-in
 	width: 100px
-	@media (min-width: 680px)
+	@media (min-width: 600px)
 		&:hover
 			transform: translate3d(0, -5px, 0)
+	@media (min-width: 1024px)
+		margin: 0 auto 20px
+		width: 75px
 	img 
 		border-radius: 6px
 		width: 100%
