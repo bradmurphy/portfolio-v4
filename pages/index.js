@@ -89,19 +89,6 @@ export function getStaticProps() {
         },
         {
           logo: {
-            height: 49,
-            src: '/images/logo-sg.png',
-            width: 230
-          },
-          headline: 'Sabrina Girvan',
-          type: 'Website',
-          url: 'http://sabrinagirvan.com',
-          date: 'August 2019',
-          copy: `Inspiring people to live healthy & happy every day.`,
-          tech: ['HTML5', 'CSS3', 'SCSS', 'JavaScript', 'React', 'PHP']
-        },
-        {
-          logo: {
             height: 80,
             src: '/images/logo-hook.png',
             width: 160
