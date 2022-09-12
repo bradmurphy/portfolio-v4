@@ -64,11 +64,7 @@ const Resume = () => (
       <div className={resume__info__block}>
         <h1 className={resume__headline}>Summary</h1>
         <p className={copyStyles}>
-          Driven programmer with an immediate goal to obtain a challenging and
-          rewarding position as a Senior Front-End Developer to further optimize
-          my skill set. I specialize in creating great user experiences using
-          the latest technologies available to provide innovative, elegant and
-          cutting-edge content to the marketing and advertising industry.
+        Driven engineer with an eye for design and an obsession with the craft. I specialize in creating great user experiences using the latest technologies available to provide innovative, elegant and cutting-edge content to the marketing and advertising industry.
         </p>
         <h1 className={resume__headline}>Experience</h1>
         <div className={resume__job__block}>
@@ -108,10 +104,6 @@ const Resume = () => (
             </li>
             <li className={copyStyles}>
               Develop learning presentations for team-wide education.
-            </li>
-            <li className={copyStyles}>
-              Assist with code reviews, mentoring and onboarding new engineers
-              to new and existing projects.
             </li>
             <li className={copyStyles}>
               Executing the standard of maintainability, interactivity,
