@@ -50,16 +50,29 @@ export function getStaticProps() {
       workProps: [
         {
           logo: {
-            height: 46,
+            height: 29,
+            src: '/images/logo-checks.svg',
+            width: 183
+          },
+          headline: 'Compliance Intelligence - Checks',
+          type: 'Website',
+          url: 'https://checks.area120.google.com/',
+          date: 'February 2022',
+          copy: `Checks brings intelligence to privacy compliance making the process easier for app developers.`,
+          tech: ['HTML5', 'CSS3', 'SASS', 'TypeScript', 'React']
+        },
+        {
+          logo: {
+            height: 40,
             src: '/images/logo-google.png',
-            width: 135
+            width: 118
           },
           headline: 'Google Maps Platform',
           type: 'Website',
           url: 'https://mapsplatform.google.com/',
           date: 'October 2021',
           copy: `Create real world and real time experiences for your customers with dynamic maps, routes &amp; places APIs from Google Maps Platform’s location solutions.`,
-          tech: ['HTML5', 'Nunjucks', 'CSS3', 'SASS', 'TypeScript']
+          tech: ['HTML5', 'Nunjucks', 'CSS3', 'SASS', 'TypeScript', 'Amagaki', 'Lit']
         },
         {
           logo: {
